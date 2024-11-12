@@ -8,5 +8,5 @@ export const mailTransporter = createTransport({
         user: 'perpaman44@gmail.com',
         pass: 'grfhgzkyxmvogatz'
     },
-    from: 'perpaman44@gmail.com'
+    from: 'jedieebulley@gmail.com'
 });

@@ -62,7 +62,7 @@ export const logInUser = async (req, res, next) => {
         );
 
         res.json({
-            message: 'User checked in!',
+            message: 'User login successful!',
             accessToken: token
         });
         // res.json('User checked in')
