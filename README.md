@@ -37,7 +37,7 @@ Follow the steps below to set up the project locally:
 
 1. Clone the repository:
   
-    git clone https://github.com/
+    git clone https://github.com/EverythingDevs/rentease-api.git
   
 
 2. Install the dependencies:
