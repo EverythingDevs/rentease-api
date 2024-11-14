@@ -3,7 +3,8 @@ export const permissions = [
         role: 'user',
         actions: [
             'get_profile',
-            'add_item',
+            'add_items',
+            'get_items', 
             'get_item', 
             'update_item',
             'update_profile',
