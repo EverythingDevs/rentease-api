@@ -84,7 +84,9 @@ export const deleteItem = async (req, res, next) => {
         if (!deleteItem) {
             return res.status(422).json("Item not found")
         }
-        res.status(200).json(deleteItem)
+        res.status(200).json({
+            message: "Item deleted successfully",
+            deleteItem})
     } catch (error) {
         next(error);
     }
