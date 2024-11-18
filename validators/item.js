@@ -2,8 +2,6 @@ import Joi from "joi";
 
 export const itemValidator = Joi.object ({
     title: Joi.string().required(),
-    rentername: Joi.string().required(),
-    rentercontact: Joi.string().required(),
     location: Joi.string().required(),
     googlemaplink: Joi.string().required(),
     price: Joi.string().required(),
@@ -11,13 +9,13 @@ export const itemValidator = Joi.object ({
     amenities: Joi.string().required(),
     category: Joi.string().required(),
     roomstatus: Joi.string().required(),
-    image: Joi.string().required(),
+    rentername: Joi.string().required(),
+    rentercontact: Joi.string().required(),
+    whatsapplink: Joi.string(),
 });
 
 export const updateItemValidator = Joi.object ({
     title: Joi.string(),
-    rentername: Joi.string().required(),
-    rentercontact: Joi.string().required(),
     location: Joi.string(),
     googlemaplink: Joi.string(),
     price: Joi.string(),
@@ -26,4 +24,7 @@ export const updateItemValidator = Joi.object ({
     category: Joi.string(),
     roomstatus: Joi.string(),
     image: Joi.string(),
+    rentername: Joi.string().required(),
+    rentercontact: Joi.string().required(),
+    whatsapplink: Joi.string()
 });

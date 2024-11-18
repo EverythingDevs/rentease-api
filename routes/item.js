@@ -10,11 +10,15 @@ const itemRouter = Router();
 // define routes
 itemRouter.post("/items", isAuthenticated, itemImageUpload.single("image"), addItem);
 
+// itemRouter.post("/items", isAuthenticated, itemImageUpload.array("images", 10), addItem);
+
 itemRouter.get("/items", getItems);
 
 itemRouter.get("/items/:id", getItem);
 
 itemRouter.patch("/items/:id", isAuthenticated, itemImageUpload.single("image"), updateItem);
+
+// itemRouter.post("/items", isAuthenticated, itemImageUpload.array("images", 10), addItem);
 
 itemRouter.delete("/items/:id", isAuthenticated, deleteItem);
 

@@ -3,12 +3,8 @@ import { toJSON } from "@reis/mongoose-to-json";
 
 
 
-
-
 const itemSchema = new Schema({
     title: { type: String, required: true },
-    rentername: {type: String, required: true},
-    rentercontact: {type: String, required: true},
     location: {type: String, required: true},
     googlemaplink: {type: String, required: true},
     price: { type: String, required: true },
@@ -17,7 +13,10 @@ const itemSchema = new Schema({
     category: { type: Types.ObjectId, ref: 'Category' },
     roomstatus: {type: String, required: true},
     image: { type: String, required: true },
-    user: { type: Types.ObjectId, required: true, ref: 'Item' }
+    user: { type: Types.ObjectId, required: true, ref: 'Item' },
+    rentername: {type: String, required: true},
+    rentercontact: {type: String, required: true},
+    whatsapplink: {type: String},
 }, {
     timestamps: true
 })
