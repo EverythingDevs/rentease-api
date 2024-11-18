@@ -4,8 +4,11 @@ import { toJSON } from "@reis/mongoose-to-json";
 
 
 
+
 const itemSchema = new Schema({
     title: { type: String, required: true },
+    rentername: {type: String, required: true},
+    rentercontact: {type: String, required: true},
     location: {type: String, required: true},
     googlemaplink: {type: String, required: true},
     price: { type: String, required: true },
