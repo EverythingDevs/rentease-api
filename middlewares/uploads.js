@@ -13,6 +13,16 @@ export const itemImageUpload = multer({
     preservePath: true
 });
 
+
+export const FraudReportImageUpload = multer({
+    storage: multerSaveFilesOrg({
+        apiAccessToken: process.env.SAVEFILESORG_API_KEY,
+        relativePath: '/rentease-api/fraudreport/*'
+
+    }),
+    preservePath: true
+});
+
 export const categoryImageUpload = multer({
     storage: multerSaveFilesOrg({
         apiAccessToken: process.env.SAVEFILESORG_API_KEY,

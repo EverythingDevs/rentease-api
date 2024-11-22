@@ -1,5 +1,5 @@
 import { ItemModel } from "../models/item.js";
-import { itemValidator, updateItemValidator} from "../validators/item.js";
+import { itemValidator, updateItemValidator } from "../validators/item.js";
 
 export const addItem = async (req, res, next) => {
     try {
@@ -23,7 +23,7 @@ export const addItem = async (req, res, next) => {
 export const getItems = async (req, res, next) => {
     try {
         const { filter = "{}", sort = "{}", limit = 10, skip = 0 } = req.query;
-
+        console.log(filter);
         const items = await ItemModel
             .find(JSON.parse(filter))
             .sort(JSON.parse(sort))
@@ -66,8 +66,8 @@ export const updateItem = async (req, res, next) => {
         if (!updateItem) {
             res.status(404).json("Item not found");
         }
-            res.status(200).json(updateItem)
-    
+        res.status(200).json(updateItem)
+
     } catch (error) {
         next(error);
     }
@@ -86,7 +86,8 @@ export const deleteItem = async (req, res, next) => {
         }
         res.status(200).json({
             message: "Item deleted successfully",
-            deleteItem})
+            deleteItem
+        })
     } catch (error) {
         next(error);
     }

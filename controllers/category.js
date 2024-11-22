@@ -20,8 +20,13 @@ export const addCategory = async (req, res, next) => {
 
 export const getAllCategories = async (req, res, next) => {
     try {
-        const categories = await CategoryModel.find();
-        res.status(200).json(categories);
+        const { filter = "{}", sort = "{}", limit = 10, skip = 0 } = req.query;
+        const category = await CategoryModel
+            .find(JSON.parse(filter))
+            .sort(JSON.parse(sort))
+            .limit(limit)
+            .skip(skip)
+        res.status(200).json(category);
     } catch (error) {
 
         next(error);

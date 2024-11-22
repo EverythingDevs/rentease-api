@@ -4,6 +4,7 @@ import userRouter from "./routes/user.js";
 import categoryRouter from "./routes/category.js";
 import mongoose from "mongoose";
 import cors from "cors"
+import reportFraudRouter from "./routes/reportFraud.js";
 
 
 // connect to database
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(itemRouter);
 app.use(userRouter);
 app.use(categoryRouter);
+app.use(reportFraudRouter);
 
 // listen to incoming request
 app.listen(3010, ()=>{

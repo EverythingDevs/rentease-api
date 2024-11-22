@@ -8,8 +8,13 @@ export const permissions = [
             'get_item', 
             'update_item',
             'update_profile',
+            'add_fraudreport',
+            'get_fraudreport',
+            'get_fraudreports',
+            'update_fraudreport',
+            'delete_fraudreport',
             'post_category',
-            'update_category'
+            'update_category',
         ]
     }, 
 
@@ -28,7 +33,13 @@ export const permissions = [
             'get_category',
             'get_categories',
             'update_category',
-            'delete_category'
+            'delete_category',
+            'add_fraudreport',
+            'get_fraudreport',
+            'get_fraudreports',
+            'update_fraudreport',
+            'delete_fraudreport',
+
         ]
     }
 ]
