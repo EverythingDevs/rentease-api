@@ -1,6 +1,7 @@
 import Joi from "joi";
 
 export const FraudReportValidator = Joi.object({
+    email: Joi.string().required(),
     nameofreporter: Joi.string().required(),
     contactofreporter: Joi.string().required(),
     dateofevent: Joi.string().required(),
@@ -12,6 +13,7 @@ export const FraudReportValidator = Joi.object({
 });
 
 export const updateFraudReportValidator = Joi.object({
+    email: Joi.string(),
     nameofreporter: Joi.string(),
     contactofreporter: Joi.string(),
     dateofevent: Joi.string(),

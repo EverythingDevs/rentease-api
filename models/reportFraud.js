@@ -5,6 +5,7 @@ import { toJSON } from "@reis/mongoose-to-json";
 
 
 const reportFraudSchema = new Schema({
+    email: {type: String, required: true},
     nameofreporter: {type: String, required: true},
     contactofreporter: {type: String, required: true},
     dateofevent:{type:String, required: true},

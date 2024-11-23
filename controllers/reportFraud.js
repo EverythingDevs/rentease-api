@@ -13,7 +13,8 @@ export const addFraudReport = async (req, res, next) => {
         }
         await ReportFraudModel.create({
             ...value,
-            user: req.auth.id
+            user: req.auth.id,
+            email: value.email
         });
         await mailTransporter.sendMail({
             to: value.email,
