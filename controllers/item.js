@@ -23,7 +23,6 @@ export const addItem = async (req, res, next) => {
 export const getItems = async (req, res, next) => {
     try {
         const { filter = "{}", sort = "{}", limit = 10, skip = 0 } = req.query;
-        console.log(filter);
         const items = await ItemModel
             .find(JSON.parse(filter))
             .sort(JSON.parse(sort))

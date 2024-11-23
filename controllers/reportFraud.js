@@ -1,5 +1,6 @@
 import { ReportFraudModel } from "../models/reportFraud.js";
 import { FraudReportValidator, updateFraudReportValidator } from "../validators/fraudreport.js";
+import { mailTransporter } from "../utils/mail.js";
 
 export const addFraudReport = async (req, res, next) => {
     try {
@@ -14,6 +15,12 @@ export const addFraudReport = async (req, res, next) => {
             ...value,
             user: req.auth.id
         });
+        await mailTransporter.sendMail({
+            to: value.email,
+            subject: 'Fraud Report',
+            text: 'Your fraud report will be reviewed for approval'
+        });
+
         res.status(201).json("Fraud report posted successfully!")
     } catch (error) {
         next(error);

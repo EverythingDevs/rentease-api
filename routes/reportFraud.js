@@ -11,7 +11,7 @@ const reportFraudRouter = Router();
 // define routes
 reportFraudRouter.post("/fraudreport", isAuthenticated, FraudReportImageUpload.single("fraudimage"), addFraudReport);
 
-// itemRouter.post("/items", isAuthenticated, itemImageUpload.multiple("images", 10), addItem);
+// reportFraudRouter.post("/items", isAuthenticated, itemImageUpload.multiple("images", 10), addItem);
 
 reportFraudRouter.get("/fraudreport", getFraudReports);
 
